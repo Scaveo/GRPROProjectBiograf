@@ -24,12 +24,12 @@ public class Theater {
         return seats;
     }
 
-    public boolean getSpecificSeat(int row, int column) {
-        return seats[row][column];
+    public boolean getSpecificSeat(int column, int row) {
+        return seats[column][row];
     }
 
-    public void flipReservation(int row, int column) {
-        seats[row][column] = !seats[row][column];
+    public void flipReservation(int column, int row) {
+        seats[column][row] = !seats[column][row];
     }
 
 }
