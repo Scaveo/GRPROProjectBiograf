@@ -7,7 +7,7 @@ import javax.swing.*;
  */
 public class MainView extends JComponent
 {
-    private Reserveview reserveView;
+    private ReserveView reserveView;
     private ShowView showView;
     private JFrame frame;
 
