@@ -3,13 +3,7 @@ package controller;
 /**
  * Created by Mikkel on 12/1/2015.
  */
-// COMPILE:
-// javac -cp mysql.jar MySQL.java
-
-// RUN:
-// java -cp mysql.jar:. MySQL
-
-import java.sql.*; // STEP 1: Import required packages
+import java.sql.*;
 
 public class Database {
     //  Database credentials
@@ -30,7 +24,7 @@ public class Database {
             connection = DriverManager.getConnection(DB_URL, USER, PASS); // STEP 3: Open a connection
             statement = connection.createStatement(); // STEP 4: Execute a query
 
-            String sql = "SELECT * FROM theaters"; // implicit semi-colon!
+            String sql = "SELECT * FROM theaters";
             ResultSet rs = statement.executeQuery(sql);
             //STEP 5: Extract data from result set
             while (rs.next()) { //Retrieve by column name
