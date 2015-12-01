@@ -20,6 +20,14 @@ public class Theater {
 
     }
 
+    public void setReservationTrue(int column, int row) {
+        seats[column][row] = true;
+    }
+
+    public void setReservationFalse(int column, int row) {
+        seats[column][row] = false;
+    }
+
     public boolean[][] getSeats() {
         return seats;
     }
