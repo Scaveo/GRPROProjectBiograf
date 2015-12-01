@@ -7,6 +7,12 @@ public class Theater {
 
     private boolean[][] seats;
 
+    public Theater(int maxNumberOfColumns, int maxNumberOfRows) {
+
+        this.seats = new boolean[maxNumberOfColumns][maxNumberOfRows];
+
+    }
+
     public Theater(int maxNumber) {
 
         this.seats = new boolean[maxNumber][maxNumber];
