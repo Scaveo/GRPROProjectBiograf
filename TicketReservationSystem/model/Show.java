@@ -7,14 +7,14 @@ package model;
 public class Show {
 
     private Theater theater;
-    private String name;
+    private String film;
     //TODO figure out time keeping. My suggestion: LocalDateTime. current suggestion is only that -Scavenius
     //for info on LocalDateTime https://docs.oracle.com/javase/tutorial/datetime/iso/datetime.html and https://docs.oracle.com/javase/8/docs/api/java/time/LocalDateTime.html
     private String time;
 
-    public Show(Theater theater, String name, String time) {
+    public Show(Theater theater, String film, String time) {
         this.theater = theater;
-        this.name = name;
+        this.film = film;
         this.time = time;
     }
 
@@ -22,8 +22,8 @@ public class Show {
         return theater;
     }
 
-    public String getName() {
-        return name;
+    public String getFilm() {
+        return film;
     }
 
     public String getTime() {
