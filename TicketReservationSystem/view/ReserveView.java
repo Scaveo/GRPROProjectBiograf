@@ -6,5 +6,6 @@ import javax.swing.JComponent;
 public class ReserveView extends JComponent
 {
     public ReserveView() {
+
     }
 }
