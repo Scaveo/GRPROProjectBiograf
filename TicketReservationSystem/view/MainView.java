@@ -22,24 +22,24 @@ public class MainView extends JFrame
     {
         reserveView = new ReserveView();
         showView = new ShowView();
-        window = new JFrame();
-        window.setSize( 600, 400);
-        window.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-        window.setContentPane(showView);
-        window.setVisible(true);
+        //window = new JFrame();
+        setSize( 600, 400);
+        setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        setContentPane(showView);
+        setVisible(true);
     }
 
     public void changeView()
     {
-        if (window.getContentPane()==reserveView)
+        if (getContentPane().equals(reserveView))
         {
-            window.setContentPane(showView);
+            setContentPane(showView);
         }
-        else if (window.getContentPane()==showView)
+        else if (getContentPane().equals(showView))
         {
-            window.setContentPane(reserveView);
+            setContentPane(reserveView);
         }
-        window.setVisible(true);
+        setVisible(true);
     }
 
 }
