@@ -2,15 +2,16 @@ package view;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 /**
  * Created by Olaleo on 01-12-2015.
  */
-public class MainView extends JFrame
+public class MainView extends JFrame implements ActionListener
 {
     private ReserveView reserveView;
     private ShowView showView;
-    private JFrame window;
 
     public MainView(String title) throws HeadlessException
     {
@@ -18,15 +19,18 @@ public class MainView extends JFrame
         initialize();
     }
 
+
     public void initialize()
     {
         reserveView = new ReserveView();
         showView = new ShowView();
-        //window = new JFrame();
         setSize( 600, 400);
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         setContentPane(showView);
         setVisible(true);
+        showView.addMainView(this);
+        reserveView.addMainView(this);
+        reserveView.changeFilm("test");
     }
 
     public void changeView()
@@ -42,6 +46,11 @@ public class MainView extends JFrame
         setVisible(true);
     }
 
+    @Override
+    public void actionPerformed(ActionEvent e)
+    {
+        changeView();
+    }
 }
 
 
