@@ -10,11 +10,12 @@ import java.util.ArrayList;
  * Created by Mikkel on 12/1/2015.
  */
 public class Controller {
-    private model.Reservation reservation;
+
     private ArrayList<Reservation> reservations;
 
+    public Controller(){
 
-    public void Controller(){
+        this.reservations = new ArrayList<Reservation>();
 
     }
 
