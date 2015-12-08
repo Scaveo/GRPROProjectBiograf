@@ -1,8 +1,6 @@
 package controller;
 
-import model.Customer;
-import model.Reservation;
-import model.Show;
+import model.*;
 
 import java.util.ArrayList;
 
@@ -11,11 +9,22 @@ import java.util.ArrayList;
  */
 public class Controller {
 
-    private ArrayList<Reservation> reservations;
+    private Reservations reservations;
+    //private ArrayList<Reservation> reservations;
+    private Shows shows;
+    //private ArrayList<Show> shows;
 
     public Controller(){
 
-        this.reservations = new ArrayList<Reservation>();
+        this.reservations = new Reservations();
+        this.shows = new Shows();
+        //this.shows = new ArrayList<Show>();
+
+    }
+
+    public void createShowList() {
+
+        Instanciator.createShowlist();
 
     }
 
@@ -27,7 +36,7 @@ public class Controller {
 
     public Reservation findReservation(Customer customer, Show show) {
 
-        for (Reservation r: reservations) {
+        for (Reservation r: reservations.getList()) {
 
             if(customer.equals(r.getCustomer()) && show.equals(r.getShow())) {
 
@@ -44,7 +53,7 @@ public class Controller {
 
     public void changeReservation(Customer customer, Show show, int[][] seats) {
 
-        for (Reservation r: reservations) {
+        for (Reservation r: reservations.getList()) {
 
             if(customer.equals(r.getCustomer()) && show.equals(r.getShow())) {
 

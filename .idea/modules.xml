@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/GRPROProjectBiograf.iml" filepath="$PROJECT_DIR$/.idea/GRPROProjectBiograf.iml" />
+      <module fileurl="file://$PROJECT_DIR$/GRPROProjectBiograf.iml" filepath="$PROJECT_DIR$/GRPROProjectBiograf.iml" />
     </modules>
   </component>
 </project>
