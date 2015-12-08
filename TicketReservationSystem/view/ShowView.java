@@ -1,5 +1,7 @@
 package view;
 import javax.swing.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 /**
  * Created by Olaleo on 01-12-2015.
@@ -7,21 +9,30 @@ import javax.swing.*;
 public class ShowView extends JComponent
 {
     JButton chooseShow;
+    MainView mainView;
 
-    public ShowView()
+    public ShowView(MainView m)
     {
+        mainView = m;
 
+
+    }
+
+    public void initialize()
+    {
         chooseShow = new JButton("Show");
         chooseShow.setSize(100,100);
+        chooseShow.addActionListener(new ActionListener()
+        {
+            @Override
+            public void actionPerformed(ActionEvent e)
+            {
+                mainView.changeView();
+            }
+        });
         add(chooseShow);
-        setVisible(true);
-
     }
 
-    public void addMainView(MainView mainView)
-    {
-        chooseShow.addActionListener(mainView);
-    }
 
 
 }

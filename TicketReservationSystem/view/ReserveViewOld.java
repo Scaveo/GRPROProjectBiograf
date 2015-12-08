@@ -5,14 +5,14 @@ import java.awt.*;
 /**
  * Created by Olaleo on 01-12-2015.
  */
-public class ReserveViewOld extends JComponent
+public class ReserveViewoLD extends JComponent
 {
     JButton saveReservation;
     JTextField name, number;
     JTextArea film;
 
 
-    public ReserveViewOld()
+    public ReserveViewoLD()
     {
 
         saveReservation = new JButton("Reserve");
@@ -46,9 +46,9 @@ public class ReserveViewOld extends JComponent
 
     public void filmInit()
     {
-        film = new JTextArea();
-        film.setLocation(10,10);
-        add(film);
+        this.film = new JTextArea();
+        this.film.setLocation(10,10);
+        add(this.film);
 
     }
 
@@ -58,11 +58,6 @@ public class ReserveViewOld extends JComponent
         this.film.setSize(100, 20);
         //this.film.setColo(Color.gray);
         add(this.film);
-    }
-
-    public void addMainView(MainView mainview)
-    {
-        saveReservation.addActionListener(mainview);
     }
 
 
