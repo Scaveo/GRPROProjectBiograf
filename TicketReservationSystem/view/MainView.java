@@ -22,34 +22,48 @@ public class MainView extends JFrame implements ActionListener
 
     public void initialize()
     {
-        reserveView = new ReserveView();
+        reserveView = new ReserveView(this);
         showView = new ShowView();
         setSize( 600, 400);
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         setContentPane(showView);
         setVisible(true);
         showView.addMainView(this);
-        reserveView.addMainView(this);
-        reserveView.changeFilm("test");
+        //reserveView.addMainView(this);
+        //reserveView.changeFilm("test");
     }
 
     public void changeView()
     {
-        if (getContentPane().equals(reserveView))
+        if (getContentPane().equals(reserveView.getContentPane()))
         {
             setContentPane(showView);
         }
         else if (getContentPane().equals(showView))
         {
-            setContentPane(reserveView);
+            setContentPane(reserveView.getContentPane());
         }
+        pack();
         setVisible(true);
+
     }
 
     @Override
     public void actionPerformed(ActionEvent e)
     {
-        changeView();
+        if (reserveView.isChangeView())
+        {
+            changeView();
+        }
+        if (e.getSource().equals(showView.chooseShow))
+        {
+            changeView();
+        }
+        /*
+        if (e.getSource().equals(reserveView.getCancelButton()))
+        {
+            System.out.println("Succes");
+        }*/
     }
 }
 
