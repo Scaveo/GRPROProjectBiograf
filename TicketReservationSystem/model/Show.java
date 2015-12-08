@@ -8,11 +8,11 @@ public class Show {
 
     private Theater theater;
     private String film;
-    //TODO figure out time keeping. My suggestion: LocalDateTime. current suggestion is only that -Scavenius
     //for info on LocalDateTime https://docs.oracle.com/javase/tutorial/datetime/iso/datetime.html and https://docs.oracle.com/javase/8/docs/api/java/time/LocalDateTime.html
-    private String time;
+    private String date;
+    private int time;
 
-    public Show(Theater theater, String film, String time) {
+    public Show(Theater theater, String film, String date, int time) {
         this.theater = theater;
         this.film = film;
         this.time = time;
@@ -26,7 +26,13 @@ public class Show {
         return film;
     }
 
-    public String getTime() {
+    public String getDate() {
+
+        return date;
+
+    }
+
+    public int getTime() {
         return time;
     }
 }

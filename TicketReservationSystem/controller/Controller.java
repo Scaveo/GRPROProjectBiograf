@@ -2,8 +2,6 @@ package controller;
 
 import model.*;
 
-import java.util.ArrayList;
-
 /**
  * Created by Mikkel on 12/1/2015.
  */
@@ -22,12 +20,6 @@ public class Controller {
 
     }
 
-    public void createShowList() {
-
-        Instanciator.createShowlist();
-
-    }
-
     public void addreservation(Reservation reservation) {
 
         reservations.add(reservation);
@@ -36,7 +28,7 @@ public class Controller {
 
     public Reservation findReservation(Customer customer, Show show) {
 
-        for (Reservation r: reservations.getList()) {
+        for (Reservation r: reservations.getReservationList()) {
 
             if(customer.equals(r.getCustomer()) && show.equals(r.getShow())) {
 
@@ -53,7 +45,7 @@ public class Controller {
 
     public void changeReservation(Customer customer, Show show, int[][] seats) {
 
-        for (Reservation r: reservations.getList()) {
+        for (Reservation r: reservations.getReservationList()) {
 
             if(customer.equals(r.getCustomer()) && show.equals(r.getShow())) {
 

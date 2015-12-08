@@ -7,12 +7,27 @@ import java.util.ArrayList;
  */
 public class Reservations {
 
-    private ArrayList<Reservation> list;
+    private ArrayList<Reservation> reservationList;
 
-    public void add(Reservation reservation) {
+    public Reservations() {
+
+        reservationList = new ArrayList<Reservation>();
+
     }
 
-    public ArrayList<Reservation> getList() {
-        return list;
+    public void add(Reservation reservation) {
+
+        reservationList.add(reservation);
+
+    }
+
+    public void delete(Reservation reservation) {
+
+        reservationList.remove(reservation);
+
+    }
+
+    public ArrayList<Reservation> getReservationList() {
+        return reservationList;
     }
 }
