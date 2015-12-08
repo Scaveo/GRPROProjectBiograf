@@ -5,24 +5,18 @@ package model;
  */
 public class Theater {
 
+    private String identifier;
     private boolean[][] seats;
 
-    public Theater(int maxNumberOfColumns, int maxNumberOfRows) {
+    public Theater(String identifier, int maxNumberOfColumns, int maxNumberOfRows) {
 
         this.seats = new boolean[maxNumberOfColumns][maxNumberOfRows];
 
     }
 
-    public Theater(int maxNumber) {
+    public Theater(String identifier, int maxNumber) {
 
         this.seats = new boolean[maxNumber][maxNumber];
-
-    }
-
-    // A default constructor
-    public Theater() {
-
-        this.seats = new boolean[15][15];
 
     }
 
