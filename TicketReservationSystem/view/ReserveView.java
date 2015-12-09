@@ -20,7 +20,6 @@ public class ReserveView extends JComponent
     private JLabel time;
     private JButton cancelButton;
     private JPanel contentPane;
-    private boolean changeView;
     private MainView mainView;
 
 

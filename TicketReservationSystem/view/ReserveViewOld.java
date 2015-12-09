@@ -5,14 +5,14 @@ import java.awt.*;
 /**
  * Created by Olaleo on 01-12-2015.
  */
-public class ReserveViewoLD extends JComponent
+public class ReserveViewOld extends JComponent
 {
     JButton saveReservation;
     JTextField name, number;
     JTextArea film;
 
 
-    public ReserveViewoLD()
+    public ReserveViewOld()
     {
 
         saveReservation = new JButton("Reserve");
