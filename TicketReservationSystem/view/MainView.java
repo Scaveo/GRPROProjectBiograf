@@ -8,7 +8,7 @@ import java.awt.event.ActionListener;
 /**
  * Created by Olaleo on 01-12-2015.
  */
-public class MainView extends JFrame implements ActionListener
+public class MainView extends JFrame
 {
     private ReserveView reserveView;
     private ShowView showView;
@@ -22,35 +22,33 @@ public class MainView extends JFrame implements ActionListener
 
     public void initialize()
     {
-        reserveView = new ReserveView();
-        showView = new ShowView();
+        reserveView = new ReserveView(this);
+        showView = new ShowView(this);
         setSize( 600, 400);
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         setContentPane(showView);
         setVisible(true);
-        showView.addMainView(this);
-        reserveView.addMainView(this);
-        reserveView.changeFilm("test");
+        //reserveView.addMainView(this);
+        //reserveView.changeFilm("test");
     }
 
     public void changeView()
     {
-        if (getContentPane().equals(reserveView))
+        if (getContentPane().equals(reserveView.getContentPane()))
         {
             setContentPane(showView);
         }
         else if (getContentPane().equals(showView))
         {
-            setContentPane(reserveView);
+            setContentPane(reserveView.getContentPane());
         }
+        pack();
         setVisible(true);
+
     }
 
-    @Override
-    public void actionPerformed(ActionEvent e)
-    {
-        changeView();
-    }
+
+
 }
 
 
