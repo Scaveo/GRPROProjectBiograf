@@ -1,5 +1,7 @@
 package model;
 
+import controller.Instanciator;
+
 import java.util.ArrayList;
 
 /**
@@ -11,7 +13,7 @@ public class Shows {
 
     public Shows() {
 
-        shows = new ArrayList<Show>();
+        shows = Instanciator.createShowlist();
 
     }
 

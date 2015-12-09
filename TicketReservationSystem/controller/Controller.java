@@ -2,6 +2,8 @@ package controller;
 
 import model.*;
 
+import java.util.ArrayList;
+
 /**
  * Created by Mikkel on 12/1/2015.
  */
@@ -10,13 +12,28 @@ public class Controller {
     private Reservations reservations;
     //private ArrayList<Reservation> reservations;
     private Shows shows;
-    //private ArrayList<Show> shows;
 
     public Controller(){
 
         this.reservations = new Reservations();
         this.shows = new Shows();
-        //this.shows = new ArrayList<Show>();
+
+    }
+
+    public Reservation createReservation(Show show, Customer customer, ArrayList<int[]> seats) {
+
+        Theater theaterReservedOn = show.getTheater();
+
+        for (int i = 0; i < seats.size(); i++) {
+
+            int[] seat = seats.get(i);
+
+            // the seat is numbered a tuple (column, row)
+            theaterReservedOn.flipReservation(seat[0],seat[1]);
+
+        }
+
+        return new Reservation(show, customer, seats);
 
     }
 
